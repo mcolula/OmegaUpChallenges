@@ -24,7 +24,7 @@ int des(int number) {
 
 int main() {
   int number = 0;
-  int i, a, d;
+  int i;
   set<int> nums;
   scanf("%d", &number);
   while(number != 0) {
