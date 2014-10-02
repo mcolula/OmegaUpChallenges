@@ -82,13 +82,13 @@ int max_val(const char * expr, char * nums, int sz) {
         pq.push(n);
     }
     else {
-	  update(&n, nums[i] - '0');
-	  i++;
-	  if(n.sz == 0)
+    update(&n, nums[i] - '0');
+    i++;
+    if(n.sz == 0)
         max_sum -= n.val;
       else
         pq.push(n);
-	}
+  }
   }
   return max_sum;
 }
