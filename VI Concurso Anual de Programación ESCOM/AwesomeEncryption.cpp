@@ -18,7 +18,7 @@ int main() {
     cin.read(msgf, n);
     cin.ignore();
     for(int i = 0; i < n; i++)
-        printf("%02X ", msge[i] xor msgc[i] xor msgf[i]);
+      printf("%02X ", msge[i] xor msgc[i] xor msgf[i]);
     printf("\n");
     scanf("%d", &n);
   }
