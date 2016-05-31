@@ -33,11 +33,10 @@ int perToIdx(vi  per) {
 } 
 
 vi  idxToPer(int idx) {
-  vi per(MAXN, 0), usd(MAXN, 0);
   int val = MAXP - idx - 1;
-  int cnt = 0 ;
+  vi  per(MAXN, 0), usd(MAXN, 0);
   for (int i = 0; i < MAXN; i++) {
-    cnt = 0;
+    int cnt  = 0;
     for (int j = MAXN - 1; j >= 0; j--)
       if (!usd[j]) {
         if (val >= cnt * factor[MAXN - i - 1])
