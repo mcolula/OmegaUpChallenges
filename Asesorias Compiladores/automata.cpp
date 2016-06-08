@@ -48,7 +48,7 @@ void busqueda(int nodo, int idx) {
       busqueda(v.first, idx);
       nodos.pop_back();
     }
-    if (cadena[idx] == v.second) {
+    if (idx <= cadena.size() && cadena[idx] == v.second) {
       nodos.push_back({v.first, v.second});
       busqueda(v.first, idx + 1);
       nodos.pop_back();
