@@ -38,13 +38,12 @@ vi  idxToPer(int idx) {
   for (int i = 0; i < MAXN; i++) {
     int cnt  = 0;
     for (int j = MAXN - 1; j >= 0; j--)
-      if (!usd[j]) {
-        if (val >= cnt * factor[MAXN - i - 1])
-          per[i]  = j;
-        else 
-          break;
-        cnt++;
-      }
+      if (!usd[j] && val >= cnt * factor[MAXN - i - 1])
+        per[i]  = j;
+      if (!usd[j] && val  < cnt * factor[MAXN - i - 1])
+        break;
+      cnt++;
+    }
     val -= (cnt - 1) * factor[MAXN - i - 1];
     usd[per[i]] = 1;
   }
