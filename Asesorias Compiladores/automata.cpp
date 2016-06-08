@@ -24,7 +24,7 @@ string cadena;
 // marca como true a los estados finales o de aceptación
 vector<bool> aceptacion(1000, false);
 // vector auxiliar para imprimir el camino recorrido
-vector<int> nodos;
+vector<pair<int, char>> nodos;
 // estado inicial
 int inicial;
 
@@ -37,19 +37,19 @@ void busqueda(int nodo, int idx) {
   if (idx == cadena.size() && aceptacion[nodo]) {
      cout << inicial;
      for (auto n: nodos)
-       cout << ", " << n;
+       cout << " -> " << n.first << " " << n.second;
      cout << endl;
   }
   // itera sobre todos los vecinos del nodo
   for (auto v: grafo[nodo]) {
     // Transición con epsilon
     if (v.second == 'E') {
-      nodos.push_back(v.first);
+      nodos.push_back({v.first, v.second});
       busqueda(v.first, idx);
       nodos.pop_back();
     }
     if (cadena[idx] == v.second) {
-      nodos.push_back(v.first);
+      nodos.push_back({v.first, v.second});
       busqueda(v.first, idx + 1);
       nodos.pop_back();
     }
