@@ -57,12 +57,13 @@ void busqueda(int nodo, int idx) {
 }
 
 int main() {
-  inicial = 3;
-  cadena = "aa";
-  agregar(3, 3, 'a');
-  agregar(3, 5, 'E');
-  agregar(5, 5, 'a');
-  aceptacion[5] = true;
+  inicial = 0;
+  cadena = "abab";
+  agregar(0, 0, 'a');
+  agregar(0, 0, 'b');
+  agregar(0, 1, 'a');
+  agregar(1, 2, 'b');
+  aceptacion[2] = true;
   busqueda(inicial, 0);
   return 0;
 }
