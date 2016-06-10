@@ -84,7 +84,7 @@ input:
 ;
 
 line:              '\n'
-                   | ifStatement  '\n'                       { }
+                   | ifStatement  '\n'                    { }
                    | comparison   '\n'                       { printf("ans = %d\n",   $1);      }
                    | integerExp   '\n'                       { printf("ans = %d\n",   $1);      } 
                    | doubleExp    '\n'                       { printf("ans = %f\n",   $1);      }
